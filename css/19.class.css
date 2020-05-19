@@ -11,6 +11,6 @@
 .main-content > article {width: 33.3333%; height: 100%; float: left; padding: 1rem; border: 1px solid red;}
 .info-menus > .menu {width: 120px;text-align: center;padding: 0.75rem 0;border: 1px solid#aaa;float: left;margin-right: 0.25rem;}
 .info-conts {border: 1px solid #aaa;width: 100%;}
-.info-conts{position: relative;margin: ;}
+.info-conts{position: relative;}
 .info-conts table{width: 100%;border:1px solid #aaa;position: absolute;}
 .info-conts td {border-bottom: 1px solid #aaa;padding: 0.5rem;}

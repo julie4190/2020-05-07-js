@@ -49,3 +49,8 @@ $(".lt-wrap").find(".navi").eq(0)
 $(".lt-wrap").find(".navi").eq(1)
 $(".lt-wrap").find(".navi").eq(2)
 </script>
+7.class관련 메서드
+**$("선택자").addclass("클래스명")**:객체에 클래스를 추가한다.
+
+
+
