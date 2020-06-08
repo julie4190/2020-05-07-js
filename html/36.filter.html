@@ -1,0 +1,98 @@
+<script>
+var users = [
+{name:"이철수", age:30, kor:99 ,eng:80},
+{name:"이철민", age:52, kor:52 ,eng:70},
+{name:"이철근", age:40, kor:88 ,eng:65},
+{name:"이철만", age:66, kor:75 ,eng:82},
+{name:"이철희", age:23, kor:65 ,eng:75},
+{name:"이철구", age:77, kor:92 ,eng:87},
+{name:"이철우", age:85, kor:70 ,eng:85},
+];
+
+
+/*************** filter() ****************/
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var oddNumbers = numbers.filter(function(v) {
+	return v%2 == 1;
+});
+var evenNumbers = numbers.filter(function(v) {
+	return v%2 == 0;
+});
+console.log(oddNumbers);
+console.log(evenNumbers);
+
+
+var ageOver30 = users.filter(function(v){
+	return v.age >= 30;
+});
+console.log(ageOver30);
+
+var korUnder60 = users.filter(function(v){
+	return v.kor < 60;
+});
+console.log(korUnder60);
+
+// 60점 이하의 과락이 없고, 총점이 140점 이상인 합격자를 추출하시오.
+var certUsers = users.filter(function(v) {
+	return v.kor>=60 && v.eng >= 60 && v.kor + v.eng >= 140;
+});
+console.log(certUsers);
+
+// 60점 이하의 과락이 있거나, 총점이 140점 이하인 불합격자를 추출하시오.
+var failUsers = users.filter(function(v) {
+	return v.kor < 60 || v.eng < 60 || v.kor + v.eng < 140;
+});
+console.log(failUsers);
+
+
+
+/*************** map() ****************/
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var doubleNumbers = numbers.map(function(v) {
+	return v * v;
+});
+console.log(doubleNumbers);
+
+// users의 전화번호에 '010-'를 추가하시오.
+var newUsers = users.map(function(v) {
+	v.tel = '010-' + v.tel;
+	return v;
+});
+console.log(newUsers);
+
+// users의 데이터에 총점을 추가하시오(총점의 변수명은 total로 한다.)
+var newUsers = users.map(function(v) {
+	v.total = v.kor + v.eng;
+	return v;
+});
+console.log(newUsers);
+
+
+/*************** reduce() ****************/
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var hap = 0;
+numbers.forEach(function(v){
+	hap += v;
+});
+console.log(hap);
+
+// forEach, filter, map => filter(function(v, i, a) {return}) 
+// reduce 							=> reduce(function(t, v, i, a) {return}, t초기값 );  
+
+var hap = numbers.reduce(function(t, v, i, a) {
+	return t + v;
+});
+console.log(hap);	// 55
+
+var hap = numbers.reduce(function(t, v, i, a) {
+	return t + v;
+}, 1000);
+console.log(hap);	// 1055 -> reduce함수의 두번째 인자는 t의 초기값이다(t = 1000), 단 객체가 인자일 경우에는 0을 기본값으로 넣어준다.
+
+
+// users의 kor의 합을 구하시오.
+var korSum = users.reduce(function(t, v) {
+	return t + v.kor;
+}, 0);
+console.log(korSum);
+</script>
