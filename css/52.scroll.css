@@ -1,0 +1,12 @@
+.page {color: white;font-size: 50px;display: flex;justify-content: center;align-items: center;}
+.page1{background-color: darkblue;height: 100vh;}
+.page2{background-color: chocolate;height: 120vh;}
+.page3{background-color:khaki;height:70vh;}
+.page4{background-color:greenyellow;height:80vh;}
+.page5{background-color: darkorange;height: 150vh;}
+
+.logo, .nav-link {cursor: pointer;}
+.nav-link.active,
+.nav-link.active:hover {color: #fac768;}
+
+.box {width: 50px; height: 50px; background-color: honeydew; position: absolute; left: 0; top: 200px;}
